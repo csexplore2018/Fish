@@ -1,21 +1,37 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package fish;
 
-/**
- *
- * @author JJ Gonzales
- */
 public class Fish {
-
-    /**
-     * @param args the command line arguments
-     */
+        private String name = "Fish";
+        public String food = "Smaller, inferior fish";
+        public String animalNoise = "Blub";
     public static void main(String[] args) {
-        // TODO code application logic here
+        AnimalFish fish1 = new FemaleFish();
+        fish1.name = "Fishy";
+        
+        System.out.println(fish1.name);
+        fish1.talk();
+        
+        AnimalFish fish2 = new MaleFish();
+        fish2.name = "MANLY Fishy";
+        System.out.println(fish2.name);
+        fish2.talk();
     }
     
+}
+class AnimalFish{
+    public String name = "Animal";
+    public String food = "Food";
+    public String animalNoise = "Blub";
+    
+    public void talk(){
+        System.out.println(animalNoise);
+    }
+}
+
+class FemaleFish extends AnimalFish{
+    
+}
+
+class MaleFish extends FemaleFish{
+    public String name = "MANLY Fishy";
 }
